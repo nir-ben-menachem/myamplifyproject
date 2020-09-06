@@ -1,17 +1,15 @@
 <template>
-    <div id="index">
+    <div class="" >
         <b-overlay :show="loading">
             <div> Select genome to analyze </div>
-            <b-form @submit.prevent="createPost">
+            <b-form  @submit.prevent="createPost">
                 <b-form-group
-                        label="Default:"
-                        label-for="file-default"
-                        label-cols-sm="2"
                         :invalid-feedback="invalidFeedback"
                 >
                     <b-form-select v-model="selected" required :state="Boolean(selected)"
-                                   :options="options"></b-form-select>
+                                   :options="options" class="mb-5 w-50"></b-form-select>
                    <b-form-file
+                            class="my-5 w-75  "
                             id="file-default"
                             accept=".txt"
                             v-model="file"
@@ -22,11 +20,11 @@
                     </b-form-file>
                         <b-row>
                             <b-col>
-                                <b-button @click="file = null" variant="outline-danger">
+                                <b-button @click="file = null" variant="danger">
                                     <b-icon-trash2-fill/>Remove</b-button>
                             </b-col>
                             <b-col>
-                                <b-button type="submit" variant="outline-primary">
+                                <b-button type="submit" variant="primary">
                                     <b-icon-cloud-upload/>Upload
                                 </b-button>
                             </b-col>
@@ -103,15 +101,5 @@
     }
 </script>
 <style scoped>
-   /*#index {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
 
-    body {
-        background: black;
-    }*/
 </style>

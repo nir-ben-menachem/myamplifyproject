@@ -1,24 +1,14 @@
-# myamplifyproject
+# covid-19 varaiant finder
 
-## Project setup
+## Authentication
 ```
-npm install
+Sign in to using amplify authentication
 ```
-
-### Compiles and hot-reloads for development
+## Upload file
 ```
-npm run serve
+Upload genetic test result text file from the upload page to s3
 ```
-
-### Compiles and minifies for production
+## Check results
 ```
-npm run build
+View the results as a chart of the variants
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

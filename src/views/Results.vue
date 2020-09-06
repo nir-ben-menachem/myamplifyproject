@@ -3,14 +3,14 @@
     <div class="container">
         <h1>Variant analysis</h1>
         <b-overlay :show="!loaded">
-        <div class="mt-1">
+        <div class="pt-5">
 
-            <b-button-group size="sm" v-for="(item) in chartData.datasets" v-bind:key="item.label">
+            <b-button-group size="sm" class="mx-3 my-3"  v-for="(item) in chartData.datasets" v-bind:key="item.label">
                 <b-button variant="primary" :pressed.sync="item.state" @click="addData">{{item.label.substr(0,10)}}</b-button>
             </b-button-group>
         </div>
         <b-list-group horizontal > Selected:
-            <b-list-group-item variant="info" v-for="(data) in selectedData.datasets" v-bind:key="data.label">
+            <b-list-group-item class="mx-lg-2" variant="info" v-for="(data) in selectedData.datasets" v-bind:key="data.label">
                 <b-badge variant="primary">{{data.label.substr(0,10)}}</b-badge>
             </b-list-group-item>
             <b-button @click="removeFiles" size="sm" variant="danger">
@@ -18,6 +18,7 @@
         </b-list-group>
 
         <BarChart
+                class="mt-lg-4"
                 :key="chosenFiles"
                 v-if="loaded"
                 :chartData="selectedData"
@@ -63,13 +64,6 @@
         computed: {
             //computed selected data to display
             selectedData() {
-                /*const datasets = this.chartData.datasets.filter((dataset) => dataset.state)
-                //console.log(datasets)
-                //console.log(this.chartData.datasets)
-                const results = {
-                    labels: this.chartData.labels,
-                    datasets: datasets
-                };*/
                 return {
                     labels: this.chartData.labels,
                     datasets: this.chartData.datasets.filter((dataset) => dataset.state)

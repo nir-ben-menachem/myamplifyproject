@@ -55,29 +55,11 @@ router.beforeResolve((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         Auth.currentAuthenticatedUser().then(()=>{
             next();
-        }).catch((err) => {
-            alert(err)
+        }).catch(() => {
             next({path: '/login'});
         });
     }
      next();
 })
 
-/*router.beforeEach(async (to,from,next) => {
-    if(to.matched.some(record => record.meta.requiresAuth)) {
-        try {
-            await Auth.currentAuthenticatedUser();
-            next();
-        }
-        onAuthUIStateChange((authState,) => {
-    if(authState !== 'signedin') this.$router.route({path: '/login'})
-})
-        catch(err) {
-            console.log(err);
-            next({path : "/"});
-        }
-    }
-})
-
- */
 export default router

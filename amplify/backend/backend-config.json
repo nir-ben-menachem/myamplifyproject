@@ -1,17 +1,24 @@
 {
-	"auth": {
-		"myamplifyprojectaab86067": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	},
-	"api": {},
-	"storage": {
-		"genes": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"function": {}
+    "auth": {
+        "myamplifyprojectaab86067": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
+    "api": {},
+    "storage": {
+        "genes": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "function": {},
+    "hosting": {
+        "amplifyhosting": {
+            "service": "amplifyhosting",
+            "providerPlugin": "awscloudformation",
+            "type": "manual"
+        }
+    }
 }

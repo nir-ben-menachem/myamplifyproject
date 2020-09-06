@@ -53,7 +53,6 @@
         --amplify-light-grey : lightblue;
         --amplify-white : rgba(3, 63, 78, 0.7);
     }
-
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -62,6 +61,7 @@
         color: #2c3e50;
         background-image: url("assets/bg-gene.png");
         background-color: lightcyan;
+        height: 100vh;
     }
 
     #nav {
